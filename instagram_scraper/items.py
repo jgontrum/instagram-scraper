@@ -9,6 +9,11 @@ import scrapy
 
 
 class InstagramScraperItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    id = scrapy.Field()
+    timestamp = scrapy.Field()
+    user = scrapy.Field()
+    likes = scrapy.Field()
+    comments = scrapy.Field()
+    text = scrapy.Field()
+    photo_low = scrapy.Field()
+    hashtags = scrapy.Field()
