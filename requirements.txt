@@ -1,1 +1,3 @@
 Scrapy==1.5.0
+scrapy-random-useragent==0.2
+scrapy-dynamodb==0.2

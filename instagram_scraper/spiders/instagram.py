@@ -69,12 +69,16 @@ class InstagramSpider(CrawlSpider):
                     ))[0]["src"]
                 }
 
-                item["hashtags"] = self.extract_hashtags(item["text"])
+                item_hashtags = self.extract_hashtags(item["text"])
 
-                hashtags = hashtags.union(set(item["hashtags"]))
+                if not item_hashtags:
+                    continue
+
+                item["hashtags"] = " ".join(item_hashtags)
+                hashtags = hashtags.union(set(item_hashtags))
 
                 yield InstagramScraperItem(item)
-            except IndexError:
+            except IndexError or TypeError:
                 continue
 
         for hashtag in hashtags:

@@ -18,7 +18,7 @@ env/bin/python:
 	env/bin/pip install $(PIPOPTIONS) -r requirements.txt
 
 crawl: env/bin/python
-	env/bin/scrapy crawl --loglevel=INFO instagram.com
+	env/bin/scrapy crawl --loglevel=INFO instagram
 
 clean:
 	rm -rfv bin develop-eggs dist downloads eggs env parts .cache .scannerwork
