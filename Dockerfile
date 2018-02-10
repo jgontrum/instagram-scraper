@@ -6,4 +6,7 @@ RUN pip install virtualenv
 COPY . /app
 RUN cd /app && make clean && make
 
-CMD ["bash", "-c", "cd /app && python -m http.server \"$$PORT\" & make crawl"]
+ENV PORT 80
+EXPOSE 80
+
+CMD ["bash", "/app/start.sh"]
